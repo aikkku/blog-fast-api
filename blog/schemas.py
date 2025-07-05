@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List
+from typing import List, Optional
 
 class User(BaseModel):
     name:str
@@ -30,7 +30,7 @@ class ShowUser(BaseModel):
 class ShowBlog(BaseModel):
     title:str
     body:str
-    creator: ShowUser
+    creator: Optional[ShowUser]
 
     class Config():
         orm_mode = True
